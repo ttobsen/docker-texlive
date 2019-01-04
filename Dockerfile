@@ -17,5 +17,3 @@ ENV PATH="/opt/texlive/2018/bin/x86_64-linux:${PATH}"
 
 RUN tlmgr install merriweather fontaxes mweights varwidth multirow nag units \
     tabu ifplatform xstring csquotes textpos draftwatermark everypage
-
-ENTRYPOINT ["xelatex", "-v"]
