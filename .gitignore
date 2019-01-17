@@ -1,0 +1,6 @@
+/tests/*
+!/tests/*.tex
+!/tests/*.txt
+!/tests/run-tests.sh
+
+.directory
