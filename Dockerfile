@@ -4,7 +4,8 @@ LABEL maintainer="Tobias Baumann <tobias.baumann@elpra.de>"
 WORKDIR /opt
 
 RUN apt-get update && \
-    apt-get -y install nano perl-modules libterm-readline-perl-perl imagemagick wget
+    apt-get -y install nano perl-modules libterm-readline-perl-perl imagemagick wget file \
+                       aspell aspell-en aspell-de
 
 RUN wget http://mirror.ctan.org/systems/texlive/tlnet/install-tl-unx.tar.gz && \
     tar -xvf install-tl-unx.tar.gz --strip-components=1
