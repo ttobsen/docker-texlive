@@ -17,11 +17,10 @@ test image:
     - docker build --cache-from docker-texlive:latest -t $DOCKER_IMAGE_NAME .
     - echo "Run tests in $DOCKER_TESTS_LOCATION"
     - docker run -v $(pwd)/tests:$DOCKER_TESTS_LOCATION -w $DOCKER_TESTS_LOCATION $DOCKER_IMAGE_NAME $DOCKER_TESTS_LOCATION/run-tests.sh
-    - cp tests/*.pdf .
   except:
     - master
     - tags
   artifacts:
     expire_in: 2 weeks 
     paths:
-    - ./*.pdf
+    - tests/artefacts

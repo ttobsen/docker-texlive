@@ -17,4 +17,4 @@ RUN ./install-tl --profile=texlive.profile
 ENV PATH="/opt/texlive/2018/bin/x86_64-linux:${PATH}"
 
 RUN tlmgr install merriweather fontaxes mweights varwidth multirow nag units \
-    tabu ifplatform xstring csquotes textpos draftwatermark everypage
+    tabu ifplatform xstring csquotes textpos draftwatermark everypage enumitem
