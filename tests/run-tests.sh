@@ -38,7 +38,7 @@ function print_results {
 	echo $(print_empty "$2")
 	echo "-----------------------------------------------"
 	echo -n "check: "
-	assert $1 $2
+	assert "$1" "$2"
 	echo "-----------------------------------------------"
 	echo ""
 	echo ""
@@ -62,6 +62,8 @@ pdflatex -version
 
 # Run XeLatex test by creating an example
 xelatex -version
+
+rsvg-convert -f pdf -o example.pdf example.svg
 $XELATEX_COMPILE test
 
 COMPILE_EXIT_CODE=$?
@@ -70,7 +72,7 @@ INST_EXPECTS="Exit with Code 0"
 
 if [ "$COMPILE_EXIT_CODE" == "0" ]
 then
-    INST_RESULTS=$INST_EXPECTS
+    INST_RESULTS="$INST_EXPECTS"
 else
     INST_RESULTS="Exit with Code $COMPILE_EXIT_CODE: $(cat test.log | grep "LaTeX Error")"
 fi
@@ -115,5 +117,5 @@ cp *.pdf $ARTEFACTS_INSTALLATION
 
 cd ..
 
-#cleanup
+cleanup
 exit $RUN_TESTS_EXIT_CODE

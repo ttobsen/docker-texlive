@@ -5,7 +5,7 @@ WORKDIR /opt
 
 RUN apt-get update && \
     apt-get -y install nano perl-modules libterm-readline-perl-perl imagemagick wget file \
-                       aspell aspell-en aspell-de
+                       aspell aspell-en aspell-de librsvg2-bin
 
 RUN wget http://mirror.ctan.org/systems/texlive/tlnet/install-tl-unx.tar.gz && \
     tar -xvf install-tl-unx.tar.gz --strip-components=1
