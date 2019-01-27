@@ -1,5 +1,11 @@
 # Changelog
 
+## 2018.2.1
+
+- Add `librsvg2-bin` to provide `rsvg-convert`
+- Add Tex Live package(s):
+  - enumitem
+
 ## 2018.2.0
 
 - Add `aspell` to enable spell checking inside container.

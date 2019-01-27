@@ -1,6 +1,5 @@
-/tests/*
-!/tests/*.tex
-!/tests/*.txt
-!/tests/run-tests.sh
+*.pdf
+*.aux
+*.log
 
 .directory

@@ -5,7 +5,7 @@ WORKDIR /opt
 
 RUN apt-get update && \
     apt-get -y install nano perl-modules libterm-readline-perl-perl imagemagick wget file \
-                       aspell aspell-en aspell-de
+                       aspell aspell-en aspell-de librsvg2-bin
 
 RUN wget http://mirror.ctan.org/systems/texlive/tlnet/install-tl-unx.tar.gz && \
     tar -xvf install-tl-unx.tar.gz --strip-components=1
@@ -17,4 +17,4 @@ RUN ./install-tl --profile=texlive.profile
 ENV PATH="/opt/texlive/2018/bin/x86_64-linux:${PATH}"
 
 RUN tlmgr install merriweather fontaxes mweights varwidth multirow nag units \
-    tabu ifplatform xstring csquotes textpos draftwatermark everypage
+    tabu ifplatform xstring csquotes textpos draftwatermark everypage enumitem
