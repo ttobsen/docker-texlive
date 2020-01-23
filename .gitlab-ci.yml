@@ -1,9 +1,10 @@
 variables:
+  DOCKER_TLS_CERTDIR: "/certs"
   DOCKER_IMAGE_NAME: docker-texlive:latest-$CI_PIPELINE_ID
   DOCKER_TESTS_LOCATION: /tests
 
 services:
-  - docker:dind
+  - docker:19.03.0-dind
 
 stages:
   - test
@@ -21,6 +22,6 @@ test image:
     - master
     - tags
   artifacts:
-    expire_in: 2 weeks 
+    expire_in: 2 weeks
     paths:
     - tests/artefacts/*
