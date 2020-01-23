@@ -9,12 +9,13 @@ RUN apt-get update && \
 
 RUN wget http://mirror.ctan.org/systems/texlive/tlnet/install-tl-unx.tar.gz && \
     tar -xvf install-tl-unx.tar.gz --strip-components=1
-    
+
 COPY texlive.profile /opt/texlive.profile
 
 RUN ./install-tl --profile=texlive.profile
 
-ENV PATH="/opt/texlive/2018/bin/x86_64-linux:${PATH}"
+ENV PATH="/opt/texlive/bin/x86_64-linux:${PATH}"
 
 RUN tlmgr install merriweather fontaxes mweights varwidth multirow nag units \
-    tabu ifplatform xstring csquotes textpos draftwatermark everypage enumitem
+    tabu ifplatform xstring csquotes textpos draftwatermark everypage enumitem \
+    letltxmacro catchfile ltablex
